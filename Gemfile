@@ -39,6 +39,10 @@ group :test, :development do
   gem 'pry'
 end
 
+group :test do
+  gem 'json_expressions'
+end
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 

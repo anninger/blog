@@ -2,7 +2,7 @@ Blog::Application.routes.draw do
   devise_for :users
   root :to => "home#index"
 
-  resource :posts, only: ['create'], format: :json
+  resources :posts, only: [:create, :update, :index, :show, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
