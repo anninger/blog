@@ -1,28 +1,14 @@
-== README
+## 迁项目
+    git clone git@github.com:anninger/blog.git
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+    cd blog
 
-Things you may want to cover:
+    rake db:create db:migrate db:seed_fu
 
-* Ruby version
+## 开发流程
 
-* System dependencies
+    git checkout -b branch-name
 
-* Configuration
+    ...
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+    git push origin branch-name

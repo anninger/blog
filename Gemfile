@@ -30,8 +30,13 @@ gem 'emblem-rails'
 gem 'devise'
 gem 'seed-fu', github: 'mbleigh/seed-fu'
 
+gem 'acts-as-taggable-on'
+
 group :test, :development do
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'pry'
 end
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
