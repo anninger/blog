@@ -1,15 +1,16 @@
 require "spec_helper"
 
 describe "create posts" do
-  let(:user) { create :user }
+  let (:user) { create :user }
 
   before do
     sign_in_as(user)
+
     post 'posts', { post: post_params }, format: :json
   end
 
   context "with valid params" do
-    let(:post_params) { attributes_for :post }
+    let(:post_params) { attributes_for(:post).merge(tag_list: 'tag1, tag2') }
 
     it "responds with a post" do
       expect(response.status).to eq(201)
@@ -22,6 +23,7 @@ describe "create posts" do
           title: String,
           body: String,
           user_id: user.id,
+          tag_list: String,
           created_at: String,
           updated_at: String
         }

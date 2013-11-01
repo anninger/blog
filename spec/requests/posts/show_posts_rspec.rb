@@ -17,6 +17,7 @@ describe "show post" do
           title: String,
           body: String,
           user_id: user.id,
+          tag_list: String,
           created_at: String,
           updated_at: String
         }

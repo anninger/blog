@@ -3,6 +3,6 @@
 FactoryGirl.define do
   factory :comment do
     content Faker::Name.name
-    post
+    post_id 1
   end
 end

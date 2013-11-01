@@ -7,7 +7,7 @@ describe "Create comments" do
   before do
     sign_in_as(user)
 
-    post "/posts/#{test_post.id}/comments", { comment: comment_params }, format: :json
+    post "comments", { comment: comment_params }, format: :json
   end
 
   context "with the right params" do
