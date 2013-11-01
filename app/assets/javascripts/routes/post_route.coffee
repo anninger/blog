@@ -6,3 +6,6 @@ Blog.PostRoute = Ember.Route.extend
     save: ->
       @get('controller.model').save().then (post) =>
         @transitionTo 'post', post
+
+    addComment: ->
+      @get('controller').send('addComment')

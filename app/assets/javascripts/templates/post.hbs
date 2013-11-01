@@ -1,4 +1,10 @@
 <p>{{title}}</p>
 <p>{{body}}</p>
 
+{{#each c in comments}}
+  <p>{{c.content}}</p>
+{{/each}}
+{{input value=newComment}}
+<button {{action 'addComment'}}>Add</button>
+
 {{outlet}}
