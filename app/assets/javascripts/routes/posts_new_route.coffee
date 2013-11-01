@@ -8,4 +8,5 @@ Blog.PostsNewRoute = Ember.Route.extend
 
   actions:
     save: ->
-      @get('controller.model').save()
+      @get('controller.model').save().then (post) =>
+        @transitionTo 'post', post
