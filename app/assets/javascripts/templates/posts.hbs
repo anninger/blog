@@ -1,6 +1,6 @@
 <ul>
   {{#each model}}
-  <li>{{#link-to 'post' this}}{{title}}{{/link-to}}&nbsp;&nbsp;&nbsp{{#link-to 'post.edit' this}}Edit{{/link-to}}</li>
+  <li>{{#link-to 'post' this}}{{title}}{{/link-to}}&nbsp;&nbsp;&nbsp{{#link-to 'post.edit' this}}Edit{{/link-to}}&nbsp;&nbsp;&nbsp<button {{action 'delete' this}}>Delete</button></li>
   {{/each}}
 </ul>
 

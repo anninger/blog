@@ -5,3 +5,5 @@ Blog.Router.map ()->
     @route 'new'
     @resource 'post', path: ':post_id', ->
       @route 'edit'
+  @resource 'comments', ->
+    @route 'comment', path: ':comment_id'

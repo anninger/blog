@@ -1,0 +1,6 @@
+<h1>Comment</h1>
+{{#each}}
+  <p>{{#link-to 'comments.comment' this}}{{post.title}}{{/link-to}}&nbsp;&nbsp;&nbsp; {{post.comments.length}} items</p>
+{{/each}}
+
+{{outlet}}
