@@ -5,4 +5,5 @@
   # is built to work nicely with the ActiveModel::Serializers gem.
   #adapter: '_ams'
 
-Blog.ApplicationAdapter = DS.FixtureAdapter.extend()
+Blog.ApplicationAdapter = DS.ActiveModelAdapter.extend()
+Blog.ApplicationSerializer = DS.ActiveModelSerializer.extend()
