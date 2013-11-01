@@ -1,0 +1,9 @@
+<ul>
+  {{#each model}}
+  <li>{{#link-to 'post' this}}{{title}}{{/link-to}}&nbsp;&nbsp;&nbsp{{#link-to 'post.edit' this}}Edit{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+{{#link-to 'posts.new'}}Add{{/link-to}}
+
+{{outlet}}
