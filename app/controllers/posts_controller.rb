@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = Post.find_by_id(params[:id])
+    post = Post.find(params[:id])
     return head :not_found unless post
 
     post.destroy
