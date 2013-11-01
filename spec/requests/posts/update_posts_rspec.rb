@@ -18,8 +18,9 @@ describe "update a post" do
           title: "a very important post",
           body: String,
           user_id: user.id,
+          tag_list: String,
           created_at: String,
-          updated_at: String 
+          updated_at: String
         }
       }
       response.body.should match_json_expression(pattern)

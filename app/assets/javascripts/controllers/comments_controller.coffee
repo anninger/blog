@@ -3,5 +3,6 @@ Blog.CommentsCommentController = Ember.ObjectController.extend
       delete: ->
         comment = @get 'model'
         comment.deleteRecord()
+
         comment.save().then =>
           @transitionToRoute 'comments'

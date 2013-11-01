@@ -15,6 +15,7 @@ describe "list all the posts" do
       title: String,
       body: String,
       user_id: Integer,
+      tag_list: String,
       created_at: String,
       updated_at: String
     }

@@ -2,12 +2,11 @@ require "spec_helper"
 
 describe "List all the comments for the Post" do
   let (:user) { create :user }
-  let (:post) { create :post, user: user}
 
   before do
-    3.times { create(:comment, post: post) }
+    3.times { create(:comment) }
     sign_in_as(user)
-    get "/posts/#{post.id}/comments"
+    get "/comments"
   end
 
   it "responds with valid body" do

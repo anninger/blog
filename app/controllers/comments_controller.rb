@@ -1,8 +1,7 @@
 class CommentsController < ApplicationController
   def create
-    post = Post.find(params[:post_id])
+    comment = Comment.create(comment_params)
 
-    comment = post.comments.create(comment_params)
     if comment.persisted?
       render json: comment, serializer: CommentSerializer, status: :created
     else
@@ -11,8 +10,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:post_id])
-    comment = post.comments.find(params[:id])
+    comment = Comment.find(params[:id])
     return head :not_found unless comment
 
     comment.destroy
@@ -20,13 +18,17 @@ class CommentsController < ApplicationController
   end
 
   def index
-    post = Post.find(params[:post_id])
-    comments = post.comments
+    if params[:post_id]
+      comments = Post.find(params[:post_id]).comments
+    else
+      comments = Comment.all
+    end
 
     render json: comments, each_serializer: CommentSerializer, meta: { total: comments.count }, status: :ok
   end
 
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :post_id)
   end
+
 end

@@ -2,9 +2,8 @@ Blog::Application.routes.draw do
   devise_for :users
   root :to => "home#index"
 
-  resources :posts, only: [:create, :update, :index, :show, :destroy] do
-    resources :comments, only: [:create, :destroy, :index]
-  end
+  resources :posts, only: [:create, :update, :index, :show, :destroy]
+  resources :comments, only: [:create, :destroy, :index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
