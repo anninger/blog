@@ -1,10 +1,18 @@
-<p>{{title}}</p>
-<p>{{body}}</p>
+title:<p>{{title}}</p>
+body:<p>{{body}}</p>
 
+<table>
+<tr>
 {{#each c in comments}}
-  <p>{{c.content}}</p>
+  <td>
+    <p>{{c.content}}</p>&nbsp;&nbsp;&nbsp<button {{action 'deleteComment' c}}> Delete</button>
+  </td>
 {{/each}}
+</tr>
+<tr>
 {{input value=newComment}}
 <button {{action 'addComment'}}>Add</button>
+</tr>
+</table>
 
 {{outlet}}
